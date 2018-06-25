@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>测试</title>
+	
+	<link rel="stylesheet" href="./deploy/bootstrap.min.css">
+	<link href="./deploy/bootstrap-editable.css" rel="stylesheet" />
+	<link href="./deploy/bootstrap-table.min.css" rel="stylesheet" />
+	
+	<script src="./deploy/jquery.min.js"></script>
+	<script src="./deploy/bootstrap.min.js"></script>
+	<script src="./deploy/bootstrap-editable.js"></script>
+	<script src="./deploy/bootstrap-table.js"></script>
+	<script src="./deploy/bootstrap-table-editable.js"></script>
+	<!--<script src="./x-editable-develop/dist/bootstrap3-editable/js/bootstrap-editable.js"></script>
+	<script src="./bootstrap-table-develop/dist/bootstrap-table.js"></script>-->
+	
+	<style>
+		.mytop{
+			background: -webkit-linear-gradient(#ECEDF0, #BFC1C5); /* Safari 5.1 - 6.0 */
+			background: -o-linear-gradient(#ECEDF0, #BFC1C5); /* Opera 11.1 - 12.0 */
+			background: -moz-linear-gradient(#ECEDF0, #BFC1C5); /* Firefox 3.6 - 15 */
+			background: linear-gradient(#ECEDF0, #BFC1C5); /* 标准的语法 */
+		}
+		.myfoot{
+			background: -webkit-linear-gradient(#ECEDF0, #BFC1C5); /* Safari 5.1 - 6.0 */
+			background: -o-linear-gradient(#ECEDF0, #BFC1C5); /* Opera 11.1 - 12.0 */
+			background: -moz-linear-gradient(#ECEDF0, #BFC1C5); /* Firefox 3.6 - 15 */
+			background: linear-gradient(#ECEDF0, #BFC1C5); /* 标准的语法 */
+		}
+		
+        .leftarea
+        {
+            float: left;
+			margin-left:-15px;
+			margin-top:-15px;
+            width: 220px;
+            height: 535px;
+            background-color: #EFEFEF;
+        }
+		.rightarea
+        {
+            float: left;
+            width: 560px;
+			margin-top:-15px;
+            height: 500px;
+        }
+		.deploytitle{
+			margin-top:30px;
+			margin-left:30px;
+			font-family:微软雅黑;
+			font-weight:bold;
+			color:#999999
+		}
+		.completetitle{
+			margin-top:15px;
+			margin-left:0px;
+			font-family:微软雅黑;
+			font-weight:bold;
+			color:#000000
+		}
+		.titleactive{
+		    margin-top:15px;
+			background-color:#2B5480;
+			color:#FFFFFF;
+			border-radius:5px 5px 5px 5px;
+			height:30px;
+			line-height:30px;
+		}
+		.firsttitle{
+		    margin-top:30px;
+		}
+
+	</style>
+</head>
+<body>
+
+<h2>欢迎来到H3000部署界面</h2>
+<!-- 按钮触发模态框 -->
+<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal1">
+	开始部署
+</button>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+	<div class="modal-dialog" style="width:800px">
+		<div class="modal-content" style="height:600px">
+			<div class="mytop" style="height:30px;border-radius:5px 5px 0px 0px; border-bottom:2px solid #A9A9A8">
+				<p id="myModalLabel" style="line-height:30px;font-family:微软雅黑;font-weight:bold">&nbsp&nbsp&nbsp&nbsp H3000标准版安装</p>
+			</div>
+			<div class="modal-body">
+				<div class="leftarea">
+					<h5 class="deploytitle titleactive firsttitle">1、用户许可协议</h5>
+					<h5 class="deploytitle">2、配置节点信息</h5>
+					<h5 class="deploytitle">3、配置vCenter信息</h5>
+					<h5 class="deploytitle">4、配置cvm信息</h5>
+					<h5 class="deploytitle">5、配置软件信息</h5>
+				</div>
+				<div class="rightarea">
+					<p class="deploytitle page-header" style="color:#000000">请阅读下面的许可协议，然后在继续</p>
+					<form role="form" style="margin-left:30px">
+					<!-- 单选 -->
+						<div class="form-group">
+						  <textarea name="" id="" rows="15" class="form-control" style="width:530px">
+时代峰峻拉萨附近拉萨附近沙发沙发上阿萨德发斯蒂芬
+
+						  </textarea>
+						</div>
+						<div class="checkbox" >
+							<label>
+								<input type="checkbox" id="LicenseAgreement">我接受许可协议条款
+							</label>
+						</div>
+				  </form>
+				</div>	
+            .
+			</div>
+			<div class="myfoot" style="height:50px;border-radius:0px 0px 5px 5px; border-top:2px solid #A9ACAF">
+				<div style= "line-height:50px;margin-left:450px">
+				<button id="back1" type="button" class="btn btn-default active" disabled="true">上一步</button>
+				<button id="next1" type="button" class="btn btn-default active" style="margin-left:12px" disabled="true" data-toggle="modal" data-target="#modal2">下一步</button>
+				<button type="button" class="btn btn-default active" style="margin-left:12px" disabled="true">完&nbsp&nbsp&nbsp&nbsp成</button>
+				<button type="button" class="btn btn-default active" data-dismiss="modal" style="margin-left:12px">关&nbsp&nbsp&nbsp&nbsp闭</button>
+				</div>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
+<!-- 模态框---node信息 -->
+<div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+	<div class="modal-dialog" style="width:800px">
+		<div class="modal-content" style="height:600px">
+			<div class="mytop" style="height:30px;border-radius:5px 5px 0px 0px; border-bottom:2px solid #A9A9A8">
+				<p id="myModalLabel" style="line-height:30px;font-family:微软雅黑;font-weight:bold">&nbsp&nbsp&nbsp&nbsp 标准版安装</p>
+			</div>
+			<div class="modal-body">
+				<div class="leftarea">
+					<h5 class="completetitle"><img src="./deploy/hook.png"/ height="30" width="30">1、用户许可协议</h5>
+					<h5 class="deploytitle titleactive">2、配置节点信息</h5>
+					<h5 class="deploytitle">3、配置vCenter信息</h5>
+					<h5 class="deploytitle">4、配置cvm信息</h5>
+					<h5 class="deploytitle">5、配置软件信息</h5>
+				</div>
+				<div class="rightarea">
+					<p class="deploytitle page-header" style="color:#000000">请填写node的相关信息，然后在继续</p>
+					<form role="form" style="margin-left:30px">
+						<div id="toolbar" style="margin-top:-20px">  
+							<div class="btn-group">  
+								<button id="add" class="btn btn-default">  
+									增加节点
+								</button>  
+								<button id="remove" class="btn btn-default">  
+									删除节点
+								</button>
+							</div> 
+						</div>
+						<table id="table" data-toolbar="#toolbar" data-id-field="node_order" data-click-to-select="true"></table>
+					</form>
+					
+				</div>	
+            .
+			</div>
+			<div class="myfoot" style="height:50px;border-radius:0px 0px 5px 5px; border-top:2px solid #A9ACAF">
+				<div style= "line-height:50px;margin-left:450px">
+				<button id="back2" type="button" class="btn btn-default active">上一步</button>
+				<button id="next2" type="button" class="btn btn-default active" style="margin-left:12px" data-toggle="modal" data-target="#modal3">下一步</button>
+				<button type="button" class="btn btn-default active" style="margin-left:12px" disabled="true" >完&nbsp&nbsp&nbsp&nbsp成</button>
+				<button type="button" class="btn btn-default active" data-dismiss="modal" style="margin-left:12px">关&nbsp&nbsp&nbsp&nbsp闭</button>
+				</div>
+			</div>
+		</div><!-- /.modal-content -->
+	</div>
+</div><!-- /.modal -->
+
+<!-- 模态框3---vCenter信息 -->
+<div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+	<div class="modal-dialog" style="width:800px">
+		<div class="modal-content" style="height:600px">
+			<div class="mytop" style="height:30px;border-radius:5px 5px 0px 0px; border-bottom:2px solid #A9A9A8">
+				<p id="myModalLabel" style="line-height:30px;font-family:微软雅黑;font-weight:bold">&nbsp&nbsp&nbsp&nbsp H3000标准版安装</p>
+			</div>
+			<div class="modal-body">
+				<div class="leftarea">
+					<h5 class="completetitle"><img src="./deploy/hook.png"/ height="30" width="30">1、用户许可协议</h5>
+					<h5 class="completetitle"><img src="./deploy/hook.png"/ height="30" width="30">2、配置节点信息</h5>
+					<h5 class="deploytitle titleactive">3、配置vCenter信息</h5>
+					<h5 class="deploytitle">4、配置cvm信息</h5>
+					<h5 class="deploytitle">5、配置软件信息</h5>
+				</div>
+				<div class="rightarea">
+					<p class="deploytitle page-header" style="color:#000000">请填写vCenter的相关信息，然后在点击下一步</p>
+					<form class="form-horizontal" role="form" >
+						<div class="form-group">
+                            <label for="test1" class="col-sm-2 control-label" style="padding-left: 0px">参数1</label>
+                            <div class="col-md-4">
+                                <input class="form-control" type="text" id="test1" />
+                            </div>
+                            <label for="test2" class="col-sm-2 control-label">参数2</label>
+                            <div class="col-md-4">
+                                <input class="form-control" type="text" id="test2"/>
+                            </div>
+                        </div>
+						
+						<div class="form-group">
+							<label for="firstname" class="col-sm-2 control-label">名字</label>
+							<div class="col-sm-10">
+							  <input type="text" class="form-control" id="firstname" placeholder="请输入名字">
+							</div>
+						  </div>
+						 <div class="form-group">
+							<label for="lastname" class="col-sm-2 control-label">姓</label>
+							<div class="col-sm-10">
+							  <input type="text" class="form-control" id="lastname" placeholder="请输入姓">
+							</div>
+						 </div>
+					</form>
+					
+				</div>	
+            .
+			</div>
+			<div class="myfoot" style="height:50px;border-radius:0px 0px 5px 5px; border-top:2px solid #A9ACAF">
+				<div style= "line-height:50px;margin-left:450px">
+				<button id="back3" type="button" class="btn btn-default active">上一步</button>
+				<button id="next3" type="button" class="btn btn-default active" style="margin-left:12px">下一步</button>
+				<button id="finsh" type="button" class="btn btn-default active" style="margin-left:12px" disabled="true">完&nbsp&nbsp&nbsp&nbsp成</button>
+				<button type="button" class="btn btn-default active" data-dismiss="modal" style="margin-left:12px">关&nbsp&nbsp&nbsp&nbsp闭</button>
+				</div>
+			</div>
+		</div><!-- /.modal-content -->
+	</div>
+</div><!-- /.modal -->
+
+</body>
+<script>
+//解决多模态框下，背景界面颜色变深的问题。
+$(document).on('show.bs.modal', '.modal', function(event) {
+        $(this).appendTo($('body'));
+    }).on('shown.bs.modal', '.modal.in', function(event) {
+        setModalsAndBackdropsOrder();
+    }).on('hidden.bs.modal', '.modal', function(event) {
+        setModalsAndBackdropsOrder();
+});
+
+function setModalsAndBackdropsOrder() {  
+	var modalZIndex = 1040;
+	$('.modal.in').each(function(index) {
+		var $modal = $(this);
+		modalZIndex++;
+		$modal.css('zIndex', modalZIndex);
+		$modal.next('.modal-backdrop.in').addClass('hidden').css('zIndex', modalZIndex - 1);
+	});
+	$('.modal.in:visible:last').focus().next('.modal-backdrop.in').removeClass('hidden');
+}
+
+//解决模态框的下拉条问题
+$.fn.modal.Constructor.prototype.hideModal = function () {
+	var that = this
+	this.$element.hide()
+	this.backdrop(function () {
+		//判断当前页面所有的模态框都已经隐藏了之后body移除.modal-open，即body出现滚动条。
+		$('.modal.fade.in').length === 0 && that.$body.removeClass('modal-open')
+		that.resetAdjustments()
+		that.resetScrollbar()
+		that.$element.trigger('hidden.bs.modal')
+	})
+}
+</script>
+
+<script type="text/javascript">
+window.onload=function(){
+    $('#LicenseAgreement').on('click',function(e){
+        //e.preventDefault();
+        var isChecked = $(this).is(':checked');
+		//alert(isChecked);
+		if(isChecked == true){
+			$('#next1').prop('disabled', false);
+		}else{
+			$('#next1').prop('disabled',true);
+		}	
+    });
+	//mode1的下一步按钮
+	$('#next1').on('click',function(){
+		//$('#modal1').modal('hide'); 
+		$("#modal1 .close").click();
+	});
+	
+	//mode2的下一步或上一步按钮
+	$('#next2').on('click',function(){
+		$.ajax({  
+            cache : true,  
+            type : "get",  
+            url : "/test/",  
+            data : {  
+                "nodes" : JSON.stringify(($('#table').bootstrapTable('getData')))
+            },                
+            error : function(request) {  
+                alert("提交失败");  
+            },  
+            success : function(data) {  
+                alert("success"); 
+            }  
+        }); 
+		
+		$("#modal2 .close").click();
+		$("#modal1 .close").click();
+		
+	});
+	$('#back2').on('click',function(){
+	    $('#modal1').modal('show');
+	    $('#modal2').modal('toggle');
+	});
+	//mode3的下一步或上一步按钮
+	$('#back3').on('click',function(){
+	    $('#modal2').modal('show');
+	    $('#modal3').modal('toggle');	
+	});
+}
+</script>
+<script>
+function isValidIP(ip) {
+    var reg = /^(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])\.(\d{1,2}|1\d\d|2[0-4]\d|25[0-5])$/
+    return reg.test(ip);
+} 
+</script>
+
+<script type="text/javascript">
+//node 列表的工具栏按钮js
+    var curRow = {};
+	var $table = $('#table'),
+	    $add = $('#add'),
+        $remove = $('#remove'),
+		$button = $('#button');
+	$add.click(function () {
+		var len = $table.bootstrapTable('getData').length;
+		$table.bootstrapTable('append', newData(len));
+		//refreshTable();
+        $table.bootstrapTable('scrollTo', 'bottom');
+		console.log($table.bootstrapTable('getData'));
+		return false;
+	});
+	
+	function newData(len) {
+        var rows = [];
+		rows.push({
+			node_order: len+1,
+			node_name: 'node_' + (len+1).toString(),
+			arg1:"arg1",
+			arg2:"arg2",
+			node_ip:'请输入'
+		}); 
+        return rows;
+    }
+	
+	function refreshTable(){
+		$("#table .ip").editable({
+			type: "text",                
+			disabled: false,             
+			emptytext: "请输入" ,
+			validate: function (value) {
+					if (isValidIP(value) == false) {  
+						return 'IP格式不正确，请修改!';  
+					}  
+			}
+		});
+	}
+		
+	$remove.click(function () {
+			
+            var ids = getIdSelections();
+            $table.bootstrapTable('remove', {
+                field: 'node_order',
+                values: ids
+            });
+			return false;
+    });
+	
+	$(function () {
+        $button.click(function () {
+            alert('getSelections: ' + JSON.stringify($table.bootstrapTable('getSelections')));
+			return false;
+        });
+    });
+	
+    $(function () {
+        $("#table").bootstrapTable({
+            clickToSelect: true,
+			striped: true,
+            columns: [{
+                checkbox: true
+            },{
+                field: "node_order",
+                title: "序号",
+                formatter: function (value, row, index) {
+					row.node_order = index+1;
+                    return index+1;
+                }
+            }, 
+				{
+                field: "node_name",
+                title: "节点名",
+                formatter: function (value, row, index) {
+					row.node_name = "node" + (index+1).toString();
+                    return "node" + (index+1).toString();
+                }
+            }, {
+                field: "node_ip",
+                title: "IP",
+				editable: {
+                    type: 'text',
+                    title: 'IP',
+                    validate: function (value) {
+						if (isValidIP(value) == false) {  
+							return 'IP格式不正确，请修改!';  
+						}  
+					}
+                }
+            }, {
+                field: "arg1",
+                title: "参数1",
+				editable: {
+                    type: 'text',
+                    title: '参数1',
+                    validate: function (v) {
+                        if (isNaN(v)) return '必须是数字';
+                        var age = parseInt(v);
+                        if (age <= 0) return '必须是正整数';
+                    }
+                }
+            },
+            {
+                field: "arg2",
+                title: "参数2"
+            }],
+			data: [{
+				node_ip: '请输入',
+				arg1: 'arg1',
+				arg2: 'arg2'
+			}],
+            onClickRow: function (row, $element) {
+                curRow = row;
+            }
+        });
+    });
+	function getIdSelections() {
+		return $.map($table.bootstrapTable('getSelections'), function (row) {
+			//console.log(row);
+			return row.node_order;
+		});
+	}
+	</script>
+
+</html>
